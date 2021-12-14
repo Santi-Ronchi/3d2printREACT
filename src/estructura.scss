@@ -1,0 +1,324 @@
+$estiloFuente: normal bold 'Work Sans', sans-serif;
+$colorPrimario: #55d6aa;
+$colorSecundario: #01baef;
+$colorLogo: #ff1493;
+$colorFondo: #1b2927;
+$margen: 20px;
+
+@mixin sizes($ancho, $alto){
+	width: $ancho;
+	height: $alto;
+}
+
+body {
+	margin: 0;
+	background: $colorFondo;
+    font: $estiloFuente;
+	font-weight: 300;
+	color: whitesmoke;
+}
+
+.encabezado {
+    background-color: $colorPrimario;
+    grid-area: nav;
+    background-image: linear-gradient(315deg, $colorSecundario 0%, $colorPrimario 30%); 
+}
+
+.encabezado::after {
+	content: '';
+	display: table;
+	clear: both;
+	padding-bottom: 15px;
+}
+
+.encabezado__logo {
+	color: $colorLogo;
+	padding: 10px 10px;
+	font-family: Tourney;
+	display: inline-block;
+	margin: $margen*0;
+	padding: 0px;
+	animation-name: iniciaPagina;
+	animation-iteration-count: 3;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+}
+
+nav {
+    li{
+    	align-items: center;
+		padding-top: $margen+5;
+		position: relative;
+    }
+
+    ul{
+        margin: 0;
+	    padding: 0;
+	    list-style: none;
+	    display: flex;
+	    flex-flow: row wrap;
+	    padding-top: 15px 0;
+	    justify-content: space-around;
+		width: 100%;
+    
+        li{
+			text-align: center;
+            a{
+                color: #444;
+	            text-decoration: none;
+	            text-transform: uppercase;
+	            font-size: 16px;
+				&:hover {
+					color: #000;
+				}
+				&::before {
+					content: '';
+					display: block;
+					height: 5px;
+					background-color: #444;
+					position: absolute;
+					top: 0;
+					width: 0%;
+					transition: all ease-in-out 250ms;
+				}
+				&:hover::before {
+					width: 100%;
+				}
+            }
+        }
+    }
+}
+
+h2 {
+	text-align: center;
+	margin: $margen;
+	color: $colorPrimario;
+	font-family: Tourney;
+}
+
+.cuerpoCarousel{
+    margin-top: $margen;
+}
+
+.textoSombreado {
+	text-shadow: 2px 2px #000;
+}
+
+.cuerpoVideo{
+    @include sizes(100%, 200px);
+	margin-bottom: $margen*2;
+}
+
+.cuerpoVideo__texto {
+	font-family: Tourney;
+	color: $colorPrimario;
+	font-size: 24px;
+}
+
+.pieDePag{
+    color: whitesmoke;
+	background-color: $colorSecundario;
+	background-image: linear-gradient(315deg, $colorSecundario 0%, #2a2a72 74%);
+    transform: translateY(50px);
+}
+
+.anuncio {
+	text-align: center;
+	margin: 100px;
+	font-family: Tourney;
+	color: $colorPrimario;
+	text-transform: uppercase;
+}
+
+section {
+	width: 80%;
+	margin: 0 auto;
+    h2{
+        color: whitesmoke;
+    }
+    table{
+        color: whitesmoke;
+    }
+}
+
+.formulario{
+    margin-top: $margen;
+}
+
+.bordesRedondeados {
+	border-radius: 10px;
+}
+
+.banner {
+	text-align: center;
+	margin: $margen;
+	color: $colorPrimario;
+	font-family: Tourney;
+	display: none;
+}
+
+.galeria {
+
+	.itemsTotal {
+		padding: $margen;
+        display: flex;
+		flex-flow: wrap;
+        justify-content: center;
+        
+		.item {
+			width: 250px;
+			height: 340px;
+			text-align: center;
+			text-shadow: 2px 2px #000;
+            flex-direction: row;
+			margin: $margen;
+            padding: 10px;
+			transition: transform 250ms;
+            box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);
+			-webkit-box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);
+            -moz-box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);
+			
+			.precioProd{
+				margin: 15px;
+			}
+		}
+
+		.item:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.carro-titulo {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.carro-columna{
+	border-bottom: 1px solid #fff;
+	margin-right: 1.5em;
+	padding-bottom: 10px;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.carro-fila {
+	display: flex;	
+}
+
+.carro-item {
+	width: 25%;
+}
+
+.carro-precio {
+	width: 30%;
+	font-size: 1.2em;
+}
+
+.carro-cant {
+	width: 35%;
+}
+
+.carro-item-titulo {
+	margin-left: .5em;
+	font-size: 1.2em;
+}
+
+.carro-cant-input {
+	height: 34px;
+	width: 40px;
+	border-radius: 5px;
+	border: 1px solid;
+	background-color: #eee;
+	padding: 0;
+	text-align: center;
+	font-size: 1em;
+	margin-right: 10px;
+
+}
+
+.carro-total {
+	text-align: end;
+	padding-right: 50px;
+}
+
+.carro-total-titulo {
+	font-weight: bold;
+	font-size: 1.5em;
+	margin-right: 15px;
+}
+
+.carro-total-precio {
+	font-size: 1.3em;
+}
+
+.btn-comprar {
+	display: block;
+	margin: 30px auto 80px auto;
+	font-size: 1.5em;
+}
+
+.btn-ordenar {
+	display: inline;
+	margin: 30px auto 80px auto;
+	font-size: 1.5em;
+}
+
+.tabla {
+	border: solid;
+	border-width: 1;
+	margin-bottom: $margen*3;
+}
+
+.tabla__titulo {
+	color: $colorPrimario;
+	font-family: Tourney;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+.carro-con-items {
+	display: none;
+}
+
+.card {
+	background-color: $colorFondo;
+}
+
+.contenedor-formulario {
+	width: 100%;
+}
+
+.no-name {
+	font-family: Tourney;
+	color: $colorPrimario;
+	width: 60%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.nombre-ingresado {
+	font-family: $estiloFuente;
+}
+
+.cantStock {
+	display: none;
+}
+
+@keyframes iniciaPagina {
+	0% {
+	}
+
+	50%{
+		color: darkred;
+	}
+
+	100% {
+	}
+}
+
+@import "~bootstrap/scss/bootstrap";
