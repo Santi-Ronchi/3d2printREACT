@@ -18,6 +18,14 @@ body {
 	color: whitesmoke;
 }
 
+.body {
+	margin: 0;
+	background: $colorFondo;
+    font: $estiloFuente;
+	font-weight: 300;
+	color: whitesmoke;
+}
+
 .encabezado {
     background-color: $colorPrimario;
     grid-area: nav;
@@ -44,14 +52,21 @@ body {
 	animation-timing-function: ease-in-out;
 }
 
-nav {
-    li{
+.ul {
+	display: flex;
+	flex-flow: row wrap;
+	padding-top: 15px 0;
+	justify-content: space-around;
+}
+
+.nav {
+    .li{
     	align-items: center;
 		padding-top: $margen+5;
 		position: relative;
     }
 
-    ul{
+    .ul{
         margin: 0;
 	    padding: 0;
 	    list-style: none;
@@ -61,9 +76,9 @@ nav {
 	    justify-content: space-around;
 		width: 100%;
     
-        li{
+        .li{
 			text-align: center;
-            a{
+            .a{
                 color: #444;
 	            text-decoration: none;
 	            text-transform: uppercase;
@@ -162,7 +177,7 @@ section {
 	.itemsTotal {
 		padding: $margen;
         display: flex;
-		flex-flow: wrap;
+		flex-flow: nowrap;
         justify-content: center;
         
 		.item {
