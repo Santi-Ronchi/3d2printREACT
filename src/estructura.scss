@@ -177,7 +177,7 @@ section {
 	.itemsTotal {
 		padding: $margen;
         display: flex;
-		flex-flow: nowrap;
+		flex-flow: row wrap;
         justify-content: center;
         
 		.item {
@@ -194,7 +194,7 @@ section {
             -moz-box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);
 			
 			.precioProd{
-				margin: 15px;
+				margin: 5px;
 			}
 		}
 
@@ -322,6 +322,10 @@ section {
 
 .cantStock {
 	display: none;
+}
+
+.precio-item {
+	display: block;
 }
 
 @keyframes iniciaPagina {

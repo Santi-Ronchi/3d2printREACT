@@ -4,10 +4,6 @@ import '../App.css';
 import { Nav, Navbar, NavDropdown, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../estructura.scss'
-import logo from '../media/logo.png';
-import fb from '../media/facelogo.png';
-import ig from '../media/instalogo.png';
-import tw from '../media/twitlogo.png';
 
 
 const NavBar = () => {
@@ -15,7 +11,7 @@ const NavBar = () => {
       <div className="encabezado">
         <Navbar bg="light" expand="lg" className="navbar navbar-expand-lg navbar-dark bg-dark">
           <Container fluid className="container">
-            <Navbar.Brand href="#"><img src={logo} alt="Logo de la pagina" height="60" width="60"/><h1 className="encabezado__logo">3D2Print</h1></Navbar.Brand>
+            <Navbar.Brand href="#"><img src="/media/logo.png" alt="Logo de la pagina" height="60" width="60"/><h1 className="encabezado__logo">3D2Print</h1></Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll" className="collapse navbar-collapse">
               <Nav
@@ -34,9 +30,9 @@ const NavBar = () => {
                 <Nav.Link href="#action7">Servicios</Nav.Link>
                 <Nav.Link href="#action8">Contacto</Nav.Link>
               </Nav>
-              <Nav.Link href="https://instagram.com/3d2prints"><img src={ig} alt="" height="30" width="30"/></Nav.Link>
-                <Nav.Link href="https://facebook.com/3D2prints-108727260476174"><img src={fb} alt="" height="30" width="30"/></Nav.Link>
-                <Nav.Link href="https://twitter.com/3d2prints"><img src={tw} alt="" height="30" width="30"/></Nav.Link>
+              <Nav.Link href="https://instagram.com/3d2prints"><img src="/media/instalogo.png" alt="" height="30" width="30"/></Nav.Link>
+                <Nav.Link href="https://facebook.com/3D2prints-108727260476174"><img src="/media/facelogo.png" alt="" height="30" width="30"/></Nav.Link>
+                <Nav.Link href="https://twitter.com/3d2prints"><img src="/media/twitlogo.png" alt="" height="30" width="30"/></Nav.Link>
                 <CartWidget/>
             </Navbar.Collapse>
           </Container>

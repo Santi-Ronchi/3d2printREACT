@@ -6,12 +6,12 @@ import './estructura.scss'
 
 function App() {
   return (
-    <body className="body">
+    <div className="body">
       <div className="App">
         <NavBar/>
         <ItemListContainer/>
       </div>
-    </body>
+    </div>
     
   );
 }
