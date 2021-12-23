@@ -1,78 +1,35 @@
 import React from 'react'
-import Item from './Item';
+import ItemList from './ItemList';
+import StockData from './StockData'
+import { useState, useEffect } from 'react'
 
-function ItemListContainer() {
+const ItemListContainer = () => {
+
+    const [items, setItems] = useState([]);
+
+  useEffect(() => {
     
-    const productos = [
-    {
-        nombre: 'Maceta',
-        precio: '500',
-        imagen: '/media/maceta3d43.jpg',
-        id: '1',
-        stock: '10'
-    },
-    {
-        nombre: 'Pokemon',
-        precio: '200',
-        imagen: '/media/poke.jpg',
-        id: '2',
-        stock: '10'
-    },
-    {
-        nombre: 'JoyConHolder',
-        precio: '1200',
-        imagen: '/media/JoyConHolderFront.jpg',
-        id: '3',
-        stock: '10'
-    },
-    {
-        nombre: 'Lapicero',
-        precio: '250',
-        imagen: '/media/LapiceroLleno.jpg',
-        id: '4',
-        stock: '10'
-    },
-    {
-        nombre: 'Escurre dentifrico',
-        precio: '100',
-        imagen: '/media/escurreDentifrico.jpg',
-        id: '5',
-        stock: '10'
-    },
-    {
-        nombre: 'Porta control remoto',
-        precio: '800',
-        imagen: '/media/PortaControles.jpg',
-        id: '6',
-        stock: '10'
-    },
-    {
-        nombre: 'Auto antiguo',
-        precio: '350',
-        imagen: '/media/autoJuguete.jpg',
-        id: '7',
-        stock: '10'
-    },
-    {
-        nombre: 'Anti anteojos nublados',
-        precio: '120',
-        imagen: '/media/antiNiebla.jpg',
-        id: '8',
-        stock: '10'
-    },
-    {
-        nombre: 'Caja .22',
-        precio: '1500',
-        imagen: '/media/balas22CaseFull.jpg',
-        id: '9',
-        stock: '10'
-    }];
+    const getItems = new Promise((resolve) => {
+      setTimeout(() => {
+        // hacemos el resolve de nuestro array. no hace falta el reject
+        resolve(StockData);
+      }, 2000);
+    });
 
-    return (
-        <div>
-            {productos.map(p => <Item key={p.id} id={p.id} nombre={p.nombre} precio={p.precio} imagen={p.imagen} stock={p.stock}/>)}
-        </div>
-    )
+    // traemos los datos de nuestra promise y los ponemos en el estado
+    getItems.then((res) => {
+      setItems(res);
+    });
+  }, []);
+
+  // el contenedor llama al componente presentacion ItemList
+  return <ItemList items={items} />;
+
+   //return (
+   //    <div>
+   //        {productos.map(p => <Item key={p.id} id={p.id} nombre={p.nombre} precio={p.precio} imagen={p.imagen} stock={p.stock}/>)}
+   //    </div>
+   //)
 }
 
 export default ItemListContainer
