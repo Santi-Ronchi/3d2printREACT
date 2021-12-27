@@ -11,7 +11,7 @@ const NavBar = () => {
       <div className="encabezado">
         <Navbar bg="light" expand="lg" className="navbar navbar-expand-lg navbar-dark bg-dark">
           <Container fluid className="container">
-            <Navbar.Brand href="#"><img src="/media/logo.png" alt="Logo de la pagina" height="60" width="60"/><h1 className="encabezado__logo">3D2Print</h1></Navbar.Brand>
+            <Navbar.Brand href="/"><img src="/media/logo.png" alt="Logo de la pagina" height="60" width="60"/><h1 className="encabezado__logo">3D2Print</h1></Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll" className="collapse navbar-collapse">
               <Nav
@@ -19,9 +19,9 @@ const NavBar = () => {
                 style={{ maxHeight: '200px' }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown title="Productos" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#action21">Todo</NavDropdown.Item>
+                  <NavDropdown.Item href="/">Todo</NavDropdown.Item>
                   <NavDropdown.Item href="#action22">Casa</NavDropdown.Item>
                   <NavDropdown.Item href="#action23">Gaming</NavDropdown.Item>
                   <NavDropdown.Item href="#action24">Otros</NavDropdown.Item>

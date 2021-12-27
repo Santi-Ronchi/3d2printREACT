@@ -1,35 +1,45 @@
 import React from 'react'
 import ItemList from './ItemList';
-import StockData from './StockData'
+import { productos } from '../data/stockData'
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 
-const ItemListContainer = () => {
+export const ItemListContainer = ({ greeting }) => {
+  const [items, setItems] = useState([]);
 
-    const [items, setItems] = useState([]);
+  /* para ponerle un loader */
+  const [loading, setLoading] = useState(true);
+
+
+  const { catId } = useParams();
 
   useEffect(() => {
-    
+    setLoading(true);
     const getItems = new Promise((resolve) => {
       setTimeout(() => {
-        // hacemos el resolve de nuestro array. no hace falta el reject
-        resolve(StockData);
-      }, 2000);
+        const myData = catId
+          ? productos.filter((item) => item.category === catId)
+          : productos;
+
+        resolve(myData);
+      }, 1000);
     });
 
-    // traemos los datos de nuestra promise y los ponemos en el estado
-    getItems.then((res) => {
-      setItems(res);
-    });
-  }, []);
+    getItems
+      .then((res) => {
+        setItems(res);
+      })
+      .finally(() => setLoading(false));
+  }, [catId]);
 
-  // el contenedor llama al componente presentacion ItemList
-  return <ItemList items={items} />;
+  return loading ? (
+    <h2>CARGANDO...</h2>
+  ) : (
+    <>
+      <h3 style={{ textAlign: 'center' }}>{greeting}</h3>
+      <ItemList items={items} />
+    </>
 
-   //return (
-   //    <div>
-   //        {productos.map(p => <Item key={p.id} id={p.id} nombre={p.nombre} precio={p.precio} imagen={p.imagen} stock={p.stock}/>)}
-   //    </div>
-   //)
-}
+  )}
 
 export default ItemListContainer

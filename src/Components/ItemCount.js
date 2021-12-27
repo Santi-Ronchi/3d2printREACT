@@ -25,7 +25,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <Button variant="outline-secondary" title="-" id="segmented-button-dropdown-1"
                 onClick={clickNegativo}
                 >-</Button>
-            <FormControl type="number" aria-label="Text input with dropdown button" value={numero}></FormControl>
+            <FormControl type="number" aria-label="Text input with dropdown button" value={numero} readOnly></FormControl>
             <Button variant="outline-secondary" title="+" id="segmented-button-dropdown-1"
                 onClick={clickPositivo}
                 >+</Button>
