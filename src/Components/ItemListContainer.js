@@ -18,7 +18,7 @@ export const ItemListContainer = ({ greeting }) => {
     const getItems = new Promise((resolve) => {
       setTimeout(() => {
         const myData = catId
-          ? productos.filter((item) => item.category === catId)
+          ? productos.filter((item) => item.categoria === catId)
           : productos;
 
         resolve(myData);

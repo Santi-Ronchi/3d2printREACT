@@ -11,7 +11,6 @@ const Item = ({id, nombre, precio, imagen, stock, descripcion}) => {
     }
 
     return (
-        
             <div className="galeria">
                 <div className="itemsTotal">
                     <div className="item" id={id}>

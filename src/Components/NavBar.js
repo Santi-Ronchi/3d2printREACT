@@ -22,9 +22,9 @@ const NavBar = () => {
                 <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown title="Productos" id="navbarScrollingDropdown">
                   <NavDropdown.Item href="/">Todo</NavDropdown.Item>
-                  <NavDropdown.Item href="#action22">Casa</NavDropdown.Item>
-                  <NavDropdown.Item href="#action23">Gaming</NavDropdown.Item>
-                  <NavDropdown.Item href="#action24">Otros</NavDropdown.Item>
+                  <NavDropdown.Item href="/category/C">Casa</NavDropdown.Item>
+                  <NavDropdown.Item href="/category/G">Gaming</NavDropdown.Item>
+                  <NavDropdown.Item href="/category/O">Otros</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="#action6">Sobre Nosotros</Nav.Link>
                 <Nav.Link href="#action7">Servicios</Nav.Link>

@@ -328,6 +328,26 @@ section {
 	display: block;
 }
 
+.flex-box {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.detail-row {
+	margin-top: 100px;
+	width: 400px;
+	height: 400px;
+	text-shadow: 2px 2px #000;
+    box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);
+	-webkit-box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);
+}
+
+.detail-outside {
+	margin-bottom: 500px;
+}
+
 @keyframes iniciaPagina {
 	0% {
 	}

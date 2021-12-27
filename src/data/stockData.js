@@ -5,7 +5,8 @@ export const productos = [
             imagen: '/media/maceta3d43.jpg',
             id: '1',
             stock: '10',
-            descripcion: 'Maceta para plantas de interiores.'
+            descripcion: 'Maceta para plantas de interiores.',
+            categoria: 'C'
         },
         {
             nombre: 'Pokemon',
@@ -13,7 +14,8 @@ export const productos = [
             imagen: '/media/poke.jpg',
             id: '2',
             stock: '10',
-            descripcion: 'Pokemon aleatorio de las primeras tres generaciones.'
+            descripcion: 'Pokemon aleatorio de las primeras tres generaciones.',
+            categoria: 'O'
         },
         {
             nombre: 'JoyConHolder',
@@ -21,7 +23,8 @@ export const productos = [
             imagen: '/media/JoyConHolderFront.jpg',
             id: '3',
             stock: '10',
-            descripcion: 'Control para encastrar los JoyCons de una forma ergonomica.'
+            descripcion: 'Control para encastrar los JoyCons de una forma ergonomica.',
+            categoria: 'G'
         },
         {
             nombre: 'Lapicero',
@@ -29,7 +32,8 @@ export const productos = [
             imagen: '/media/LapiceroLleno.jpg',
             id: '4',
             stock: '10',
-            descripcion: 'Lapicero estilo low poly para escritorios.'
+            descripcion: 'Lapicero estilo low poly para escritorios.',
+            categoria: 'C'
         },
         {
             nombre: 'Escurre dentifrico',
@@ -37,7 +41,8 @@ export const productos = [
             imagen: '/media/escurreDentifrico.jpg',
             id: '5',
             stock: '10',
-            descripcion: 'Gadget para poder sacar las ultimas gotas de dentifrico.'
+            descripcion: 'Gadget para poder sacar las ultimas gotas de dentifrico.',
+            categoria: 'C'
         },
         {
             nombre: 'Porta control remoto',
@@ -45,7 +50,8 @@ export const productos = [
             imagen: '/media/PortaControles.jpg',
             id: '6',
             stock: '10',
-            descripcion: 'Organizador para poner los controles remotos de la casa.'
+            descripcion: 'Organizador para poner los controles remotos de la casa.',
+            categoria: 'C'
         },
         {
             nombre: 'Auto antiguo',
@@ -53,7 +59,8 @@ export const productos = [
             imagen: '/media/autoJuguete.jpg',
             id: '7',
             stock: '10',
-            descripcion: 'Auto de juguete modelado a partir de un Lotus.'
+            descripcion: 'Auto de juguete modelado a partir de un Lotus.',
+            categoria: 'O'
         },
         {
             nombre: 'Anti anteojos nublados',
@@ -61,7 +68,8 @@ export const productos = [
             imagen: '/media/antiNiebla.jpg',
             id: '8',
             stock: '10',
-            descripcion: 'Instrumeto para evitar que los anteojos se empañen cuando se usan barbijos.'
+            descripcion: 'Instrumeto para evitar que los anteojos se empañen cuando se usan barbijos.',
+            categoria: 'O'
         },
         {
             nombre: 'Caja .22',
@@ -69,5 +77,6 @@ export const productos = [
             imagen: '/media/balas22CaseFull.jpg',
             id: '9',
             stock: '10',
-            descripcion: 'Caja para almacenar balas calibre .22 con marcas para sacar de a 10 municiones.'
+            descripcion: 'Caja para almacenar balas calibre .22 con marcas para sacar de a 10 municiones.',
+            categoria: 'O'
         }];
