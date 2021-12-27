@@ -10,12 +10,6 @@ const ItemDetail = ({nombre, precio, imagen, id, stock, descripcion}) => {
                 <p>{descripcion}</p>
                 <h2>${precio}</h2>
               </section>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
             </div>
         </div>
         

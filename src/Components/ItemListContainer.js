@@ -33,7 +33,7 @@ export const ItemListContainer = ({ greeting }) => {
   }, [catId]);
 
   return loading ? (
-    <h2>CARGANDO...</h2>
+    <h2 className="pantallaDeCarga">CARGANDO...</h2>
   ) : (
     <>
       <h3 style={{ textAlign: 'center' }}>{greeting}</h3>

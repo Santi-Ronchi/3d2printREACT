@@ -24,6 +24,6 @@ export const ItemDetailContainer = () => {
       }).finally(() => setCarga(false));
     }, [itemId]);
 
-    return cargando ? <h2>CARGANDO...</h2> : <ItemDetail {...item} />;}
+    return cargando ? <h2 className="pantallaDeCarga">CARGANDO...</h2> : <ItemDetail {...item} />;}
 
 export default ItemDetailContainer
