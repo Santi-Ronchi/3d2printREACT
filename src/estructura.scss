@@ -18,6 +18,10 @@ body {
 	color: whitesmoke;
 }
 
+.noStyle {
+  font-style: none;
+}
+
 .body {
 	margin: 0;
 	background: $colorFondo;
@@ -169,7 +173,6 @@ section {
 	margin: $margen;
 	color: $colorPrimario;
 	font-family: Tourney;
-	display: none;
 }
 
 .galeria {
@@ -219,6 +222,7 @@ section {
 }
 
 .carro-fila {
+	margin-left: 10%;
 	display: flex;	
 }
 
@@ -254,6 +258,7 @@ section {
 }
 
 .carro-total {
+	margin-right: 2.5%;
 	text-align: end;
 	padding-right: 50px;
 }
@@ -332,12 +337,20 @@ section {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	align-items: center
+}
+
+.flex-box-detail{
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center
 }
 
 .detail-row {
 	margin-top: 100px;
-	width: 400px;
-	height: 400px;
+	width: 35%;
+	height: 370px;
 	text-shadow: 2px 2px #000;
     box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);
 	-webkit-box-shadow: 10px 10px 11px -1px rgba(0,0,0,0.25);

@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 const Item = ({id, nombre, precio, imagen, stock, descripcion}) => {
 
-    const agregarAlCarro = (cant) => {
-        alert(`Se pusieron ${cant} items en el carro.`)
+    const agregarAlCarro = () => {
+        alert(`Se pusieron los items en el carro.`)
     }
 
     return (

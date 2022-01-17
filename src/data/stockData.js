@@ -68,7 +68,7 @@ export const productos = [
             imagen: '/media/antiNiebla.jpg',
             id: '8',
             stock: '10',
-            descripcion: 'Instrumeto para evitar que los anteojos se empañen cuando se usan barbijos.',
+            descripcion: 'Para evitar que los anteojos se empañen con barbijos.',
             categoria: 'O'
         },
         {

@@ -9,8 +9,6 @@ export const ItemDetailContainer = () => {
     const [cargando, setCarga] = useState(true);
   
     const { itemId } = useParams();
-  
-    console.log(itemId);
 
     useEffect(() => {
       const getItem = new Promise((resolve) => {

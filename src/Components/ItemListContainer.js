@@ -25,12 +25,7 @@ export const ItemListContainer = ({ greeting }) => {
       }, 1000);
     });
 
-    getItems
-      .then((res) => {
-        setItems(res);
-      })
-      .finally(() => setLoading(false));
-  }, [catId]);
+    getItems.then((res) => {setItems(res);}).finally(() => setLoading(false));}, [catId]);
 
   return loading ? (
     <h2 className="pantallaDeCarga">CARGANDO...</h2>

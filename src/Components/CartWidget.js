@@ -1,11 +1,31 @@
 import React from 'react'
-import { Nav } from 'react-bootstrap';
+import { useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { CartContext } from '../context/CartContext';
 
 const CartWidget = () => {
+
+    const {myData}= useContext(CartContext);
+    const {getTotalItems} = useContext(CartContext);
+    const {getTotalPrecio} = useContext(CartContext);
+
+    useEffect(()=>{
+        getTotalItems();
+        getTotalPrecio();
+    },[myData])
+
     return (
-        <div>
-            <Nav.Link href="#action31"><img src="/media/minicart.png" alt="Carrito de compras" height="40" width="40"/></Nav.Link>
-        </div>
+            <div>
+                {getTotalItems() > 0 ? (
+                <Link to={`/cart`} className="noStyle">
+                    <FontAwesomeIcon className='icon' icon={faShoppingCart} />
+                    <div><h6 className="p-carro">{getTotalItems(myData)}</h6></div>
+                </Link>
+                ): null}
+            </div>
+            
     )
 }
 

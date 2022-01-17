@@ -30,8 +30,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 onClick={clickPositivo}
                 >+</Button>
           </InputGroup>
-
-          <Button variant="outline-primary" title="alCarro" onClick={() => onAdd(numero)}>Agregar</Button>
+          <Button variant="outline-primary" title="alCarro" onClick={() => {onAdd(numero)}}>Agregar</Button>
+          
         </>
     )
 }
