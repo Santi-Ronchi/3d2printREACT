@@ -1,4 +1,4 @@
-export const productos = [
+/*export const productos = [
         {
             nombre: 'Maceta',
             precio: '500',
@@ -79,4 +79,4 @@ export const productos = [
             stock: '10',
             descripcion: 'Caja para almacenar balas calibre .22 con marcas para sacar de a 10 municiones.',
             categoria: 'O'
-        }];
+        }];*/

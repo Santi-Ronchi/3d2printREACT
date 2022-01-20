@@ -10,6 +10,9 @@ import './estructura.scss'
 
 
 function App() {
+
+  console.log(process.env);
+  
   return (
     <CartContextProvider>
         <div className="body">

@@ -3,29 +3,39 @@ import ItemList from './ItemList';
 import { productos } from '../data/stockData'
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react'
+import db from '../firebase/firebase';
+import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
+
 
 export const ItemListContainer = ({ greeting }) => {
+  
   const [items, setItems] = useState([]);
-
-  /* para ponerle un loader */
+  //para ponerle un loader
   const [loading, setLoading] = useState(true);
-
 
   const { catId } = useParams();
 
-  useEffect(() => {
+  useEffect( async () => {
     setLoading(true);
-    const getItems = new Promise((resolve) => {
-      setTimeout(() => {
-        const myData = catId
-          ? productos.filter((item) => item.categoria === catId)
-          : productos;
+    const myProducts = catId ?
+      query(collection(db, "items"), where("categoria", "==", catId ))
+      :
+      collection(db, "items");
 
-        resolve(myData);
-      }, 1000);
-    });
+      try {
+        const querySnapshot = await getDocs(myProducts)
+        console.log(querySnapshot.docs)
+        setItems(querySnapshot.docs.map(p => {
+          return { ...p.data(), id: p.id }
+        }))
+      }
+      catch {
+        console.log("Error in the application")
+      }
 
-    getItems.then((res) => {setItems(res);}).finally(() => setLoading(false));}, [catId]);
+      setLoading(false)
+
+  }, [catId]);
 
   return loading ? (
     <h2 className="pantallaDeCarga">CARGANDO...</h2>
