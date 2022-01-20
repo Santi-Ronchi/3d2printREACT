@@ -7,21 +7,21 @@ import { CartContext } from '../context/CartContext';
 
 const CartWidget = () => {
 
-    const {myData}= useContext(CartContext);
+    const {listaProductos}= useContext(CartContext);
     const {getTotalItems} = useContext(CartContext);
     const {getTotalPrecio} = useContext(CartContext);
 
     useEffect(()=>{
         getTotalItems();
         getTotalPrecio();
-    },[myData])
+    },[listaProductos])
 
     return (
             <div>
                 {getTotalItems() > 0 ? (
                 <Link to={`/cart`} className="noStyle">
                     <FontAwesomeIcon className='icon' icon={faShoppingCart} />
-                    <div><h6 className="p-carro">{getTotalItems(myData)}</h6></div>
+                    <div><h6 className="p-carro">{getTotalItems(listaProductos)}</h6></div>
                 </Link>
                 ): null}
             </div>

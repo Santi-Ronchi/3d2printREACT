@@ -5,17 +5,17 @@ import { Button, InputGroup, FormControl } from 'react-bootstrap';
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [numero, setNumero] = useState(parseInt(initial))
+    const [cantidad, setCantidad] = useState(parseInt(initial))
     
     const clickPositivo = () => {
-        if(numero < stock) {
-            setNumero( numero + 1)
+        if(cantidad < stock) {
+            setCantidad( cantidad + 1)
         }  else {alert(`El stock dispone de ${stock} unidades`)}
     }
     
     const clickNegativo = () => {
-        if(numero > 1) {
-            setNumero( numero - 1)
+        if(cantidad > 1) {
+            setCantidad( cantidad - 1)
         }
     }
 
@@ -25,12 +25,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
             <Button variant="outline-secondary" title="-" id="segmented-button-dropdown-1"
                 onClick={clickNegativo}
                 >-</Button>
-            <FormControl type="number" aria-label="Text input with dropdown button" value={numero} readOnly></FormControl>
+            <FormControl type="number" aria-label="Text input with dropdown button" value={cantidad} readOnly></FormControl>
             <Button variant="outline-secondary" title="+" id="segmented-button-dropdown-1"
                 onClick={clickPositivo}
                 >+</Button>
           </InputGroup>
-          <Button variant="outline-primary" title="alCarro" onClick={() => {onAdd(numero)}}>Agregar</Button>
+          <Button variant="outline-primary" title="alCarro" onClick={() => {onAdd(cantidad)}}>Agregar</Button>
           
         </>
     )

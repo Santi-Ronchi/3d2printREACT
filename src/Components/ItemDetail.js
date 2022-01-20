@@ -19,8 +19,6 @@ const ItemDetail = ({nombre, precio, imagen, id, stock, descripcion}) => {
     setAgregado(true);
   }
 
-  useEffect(()=>{}, [agregado])
-
     return (
         <div className="detail-outside flex-box-detail">
             <div className="detail-row">
