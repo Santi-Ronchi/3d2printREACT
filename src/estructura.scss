@@ -261,16 +261,18 @@ section {
 	margin-right: 2.5%;
 	text-align: end;
 	padding-right: 50px;
+	
 }
 
 .carro-total-titulo {
 	font-weight: bold;
-	font-size: 1.5em;
+	font-size: 2em;
 	margin-right: 15px;
+
 }
 
 .carro-total-precio {
-	font-size: 1.3em;
+	font-size: 1.8em;
 }
 
 .btn-comprar {
@@ -364,6 +366,10 @@ section {
 .pantallaDeCarga {
 	margin: 300px;
 	justify-content: center;
+}
+
+.align-left {
+	text-align: left;
 }
 
 @keyframes iniciaPagina {

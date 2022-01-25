@@ -8,7 +8,6 @@ export const CartContext = createContext();
 const CarroContextProvider = ({ children }) => {
 
   const [listaProductos, setListaProductos] = useState([]);
-  console.log(listaProductos);
 
   const addProducto = (id, titulo, precio, cantidad, stock, imagen) => {
     const exists = listaProductos.find(p => p.id === id);
