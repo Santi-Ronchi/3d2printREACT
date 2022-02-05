@@ -32,9 +32,9 @@ const NavBar = () => {
                 <Nav.Link as={ Link } to="#action8">Contacto</Nav.Link>
               </Nav>
               <Nav.Link href="https://instagram.com/3d2prints"><img src="/media/instalogo.png" alt="" height="30" width="30"/></Nav.Link>
-                <Nav.Link href="https://facebook.com/3D2prints-108727260476174"><img src="/media/facelogo.png" alt="" height="30" width="30"/></Nav.Link>
-                <Nav.Link href="https://twitter.com/3d2prints"><img src="/media/twitlogo.png" alt="" height="30" width="30"/></Nav.Link>
-                <CartWidget/>
+              <Nav.Link href="https://facebook.com/3D2prints-108727260476174"><img src="/media/facelogo.png" alt="" height="30" width="30"/></Nav.Link>
+              <Nav.Link href="https://twitter.com/3d2prints"><img src="/media/twitlogo.png" alt="" height="30" width="30"/></Nav.Link>
+              <CartWidget/>
             </Navbar.Collapse>
           </Container>
         </Navbar>

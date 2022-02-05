@@ -7,16 +7,20 @@ import ItemCount from './ItemCount'
 const ItemDetail = ({nombre, precio, imagen, id, stock, descripcion}) => {
 
   const [agregado, setAgregado] = useState(false);
-
   const { myData, addProducto } = useContext(CartContext);
 
   const sendItem = (cantidad) => {
-    addProducto(id, nombre, precio, cantidad, stock, imagen);
+    let dentroDelStock = addProducto(id, nombre, precio, cantidad, stock, imagen);
+    return dentroDelStock;
   };
 
   const  agregadoOk = (cantidad) => {
-    sendItem(cantidad);
-    setAgregado(true);
+    let stockSinProblemas = sendItem(cantidad);
+    if(stockSinProblemas === true){
+      setAgregado(true);
+    }else{
+      alert("La suma de productos de " + nombre + " supera el stock.");
+    }
   }
 
     return (

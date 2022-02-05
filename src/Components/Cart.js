@@ -25,9 +25,9 @@ const Cart = () => {
                         <span className="carro-cant carro-titulo carro-columna">CANTIDAD</span>
                     </div>
                     {listaProductos.map(p => <CartItem key={p.id} id={p.id} nombre={p.titulo} precio={p.precio} imagen={p.imagen} cantidad={p.cantidad}/>)}
-                    <div class="carro-total">
-                      <strong class="carro-total-titulo">Total</strong>
-                      <span class="carro-total-precio">${precioTotal}</span>
+                    <div className="carro-total">
+                      <strong className="carro-total-titulo">Total</strong>
+                      <span className="carro-total-precio">${precioTotal}</span>
                     </div>
                     <br/>
                     <br/>

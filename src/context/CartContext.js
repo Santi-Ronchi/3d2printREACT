@@ -13,11 +13,13 @@ const CarroContextProvider = ({ children }) => {
     const exists = listaProductos.find(p => p.id === id);
     if (exists && exists.cantidad + cantidad <= stock){
       exists.cantidad += cantidad;
-      return setListaProductos( [...listaProductos] )
+      setListaProductos( [...listaProductos] );
+      return true;
     }else if (exists && exists.cantidad + cantidad > stock){
-      return alert("El stock solo dispone de " + stock + " unidades")
+      return false;
     };
-    setListaProductos([...listaProductos, { id, titulo, precio, cantidad }]);
+    setListaProductos([...listaProductos, { id, titulo, precio, cantidad, stock }]);
+    return true;
   };
 
   const clearCart = () => {
@@ -32,7 +34,8 @@ const CarroContextProvider = ({ children }) => {
   const getTotalItems = () => {
     let totalItems = 0;
     listaProductos.map(element => {
-        totalItems += element.cantidad
+      totalItems += element.cantidad
+      return totalItems;
     });
     return totalItems;
   }
@@ -40,13 +43,14 @@ const CarroContextProvider = ({ children }) => {
   const getTotalPrecio = () => {
     let totalPrecio = 0;
     listaProductos.map(element => {
-        totalPrecio += element.precio * element.cantidad
+      totalPrecio += element.precio * element.cantidad
+      return totalPrecio;
     });
     return totalPrecio;
   }
 
   return (
-    <CartContext.Provider value={{ listaProductos, addProducto, getTotalItems, getTotalPrecio, removeItem, removeItem, clearCart}}>
+    <CartContext.Provider value={{ listaProductos, addProducto, getTotalItems, getTotalPrecio, removeItem, clearCart}}>
       {children}
     </CartContext.Provider>
   );

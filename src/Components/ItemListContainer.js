@@ -9,9 +9,8 @@ import { collection, getDocs, query, where} from 'firebase/firestore';
 export const ItemListContainer = ({ greeting }) => {
   
   const [items, setItems] = useState([]);
-  //para ponerle un loader
-  const [loading, setLoading] = useState(true);
 
+  const [loading, setLoading] = useState(true);
   const { catId } = useParams();
 
   useEffect( async () => {
@@ -23,7 +22,6 @@ export const ItemListContainer = ({ greeting }) => {
 
       try {
         const querySnapshot = await getDocs(myProducts)
-        console.log(querySnapshot.docs)
         setItems(querySnapshot.docs.map(p => {
           return { ...p.data(), id: p.id }
         }))

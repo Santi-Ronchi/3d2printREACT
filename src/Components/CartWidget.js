@@ -11,7 +11,7 @@ const CartWidget = () => {
     const {getTotalItems} = useContext(CartContext);
     const {getTotalPrecio} = useContext(CartContext);
 
-    useEffect(()=>{
+    useEffect( ()=>{
         getTotalItems();
         getTotalPrecio();
     },[listaProductos])

@@ -4,6 +4,7 @@ import ItemDetailContainer from './Components/ItemDetailContainer';
 import ItemListContainer from './Components/ItemListContainer';
 import CartContextProvider from './context/CartContext';
 import NavBar from './Components/NavBar';
+import Footer from './Components/Footer';
 import Cart from './Components/Cart'
 
 import './estructura.scss'
@@ -26,6 +27,7 @@ function App() {
               <Route path="/cart" element={<Cart/>} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
+            <Footer></Footer>
           </BrowserRouter>
             <br></br>
             <br></br>
