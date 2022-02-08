@@ -32,8 +32,6 @@ const Cart = () => {
                     <br/>
                     <br/>
                     <CartForm></CartForm>
-
-                    
                 </div>
                 ):(
                     <div className="detail-outside">
@@ -42,7 +40,7 @@ const Cart = () => {
                     </div>
                 )}
         </div>
-    )
-}
+    );
+};
 
 export default Cart

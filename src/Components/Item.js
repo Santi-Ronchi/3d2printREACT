@@ -10,7 +10,7 @@ import '../estructura.scss'
 const Item = ({id, nombre, precio, imagen, stock, descripcion}) => {
 
   const [agregado, setAgregado] = useState(false);
-  const { myData, addProducto } = useContext(CartContext);
+  const { addProducto } = useContext(CartContext);
   
   const sendItem = (cantidad) => {
      let dentroDelStock = addProducto(id, nombre, precio, cantidad, stock, imagen);
@@ -51,7 +51,7 @@ const Item = ({id, nombre, precio, imagen, stock, descripcion}) => {
                 </div>
             </div>
         
-    )
-}
+    );
+};
 
 export default Item

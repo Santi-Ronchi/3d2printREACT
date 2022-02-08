@@ -5,14 +5,13 @@ import ItemListContainer from './Components/ItemListContainer';
 import CartContextProvider from './context/CartContext';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
-import Cart from './Components/Cart'
+import Cart from './Components/Cart';
+import SobreNosotros from './Components/SobreNosotros';
+import './estructura.scss';
 
-import './estructura.scss'
 
 
 function App() {
-
-  console.log(process.env);
   
   return (
     <CartContextProvider>
@@ -25,6 +24,7 @@ function App() {
               <Route path="/category/:catId" element={<ItemListContainer greeting={'FILTRADO'} />}/>
               <Route path="/product/:itemId" element={<ItemDetailContainer />} />
               <Route path="/cart" element={<Cart/>} />
+              <Route path="/sobrenosotros" element={<SobreNosotros/>} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
             <Footer></Footer>

@@ -18,8 +18,7 @@ const NavBar = () => {
               <Nav
                 className="me-auto my-2 my-lg-0"
                 style={{ maxHeight: '200px' }}
-                navbarScroll
-              >
+                navbarScroll>
                 <Nav.Link as={ Link } to="/">Home</Nav.Link>
                 <NavDropdown title="Productos" id="navbarScrollingDropdown">
                   <NavDropdown.Item as={ Link } to="/">Todo</NavDropdown.Item>
@@ -27,9 +26,7 @@ const NavBar = () => {
                   <NavDropdown.Item as={ Link } to="/category/G">Gaming</NavDropdown.Item>
                   <NavDropdown.Item as={ Link } to="/category/O">Otros</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link as={ Link } to="#action6">Sobre Nosotros</Nav.Link>
-                <Nav.Link as={ Link } to="#action7">Servicios</Nav.Link>
-                <Nav.Link as={ Link } to="#action8">Contacto</Nav.Link>
+                <Nav.Link as={ Link } to="/sobrenosotros">Sobre Nosotros</Nav.Link>
               </Nav>
               <Nav.Link href="https://instagram.com/3d2prints"><img src="/media/instalogo.png" alt="" height="30" width="30"/></Nav.Link>
               <Nav.Link href="https://facebook.com/3D2prints-108727260476174"><img src="/media/facelogo.png" alt="" height="30" width="30"/></Nav.Link>

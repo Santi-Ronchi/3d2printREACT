@@ -9,12 +9,10 @@ const CartWidget = () => {
 
     const {listaProductos}= useContext(CartContext);
     const {getTotalItems} = useContext(CartContext);
-    const {getTotalPrecio} = useContext(CartContext);
 
     useEffect( ()=>{
         getTotalItems();
-        getTotalPrecio();
-    },[listaProductos])
+    },[listaProductos]);
 
     return (
             <div>

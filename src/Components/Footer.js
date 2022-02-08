@@ -1,5 +1,5 @@
 import '../App.css';
-import { Nav } from 'react-bootstrap';
+import { Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../estructura.scss'
@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <div>
             <div className="navbar pieDePag fixed-bottom navbar-expand-sm">
-                <div className="container-fluid">
+                <Container fluid className="container">
                     <h6 className="navbar-brand">©3d2print</h6>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <ul className="navbar-nav">
@@ -20,7 +20,7 @@ const Footer = () => {
                             <Nav.Link href="https://twitter.com/3d2prints"><img src="/media/twitlogo.png" alt="" height="30" width="30"/></Nav.Link>
                         </ul>
                     </div>
-                </div>
+                </Container>
             </div>
         </div>
     )

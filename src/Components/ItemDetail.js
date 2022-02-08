@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../context/CartContext';
@@ -7,7 +7,8 @@ import ItemCount from './ItemCount'
 const ItemDetail = ({nombre, precio, imagen, id, stock, descripcion}) => {
 
   const [agregado, setAgregado] = useState(false);
-  const { myData, addProducto } = useContext(CartContext);
+  const { addProducto } = useContext(CartContext);
+  const [loading, setLoading] = useState(true);
 
   const sendItem = (cantidad) => {
     let dentroDelStock = addProducto(id, nombre, precio, cantidad, stock, imagen);
@@ -22,9 +23,14 @@ const ItemDetail = ({nombre, precio, imagen, id, stock, descripcion}) => {
       alert("La suma de productos de " + nombre + " supera el stock.");
     }
   }
+  
+  useEffect(() => {
+    setTimeout(() => {  setLoading(false); }, 1500);
+  }, [])
 
-    return (
-        <div className="detail-outside flex-box-detail">
+    return loading ? (<h2 className="pantallaDeCarga">CARGANDO...</h2>
+    ) : (
+      <div className="detail-outside flex-box-detail">
             <div className="detail-row">
               <img src={imagen} alt={`${id}-${nombre}`} className=" bordesRedondeados" />
               <section className="">
@@ -46,9 +52,8 @@ const ItemDetail = ({nombre, precio, imagen, id, stock, descripcion}) => {
               }
             </div>
         </div>
-        
-    )
-}
+    );
+};
 
 export default ItemDetail
 

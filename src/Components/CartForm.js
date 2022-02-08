@@ -3,10 +3,11 @@ import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import db from '../firebase/firebase';
-import { addDoc, collection, doc, query, where, updateDoc, writeBatch } from 'firebase/firestore';
+import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
 
 const CartForm = () => {
 
+    const {clearCart} = useContext(CartContext);
     const [idCompra, setID] = useState("");
     const [compraTerminada, setTerminado] = useState(false);
     const {listaProductos, getTotalPrecio}= useContext(CartContext);
@@ -23,12 +24,11 @@ const CartForm = () => {
 
     const updatePerson = (event) => {
         setUserData({ ...userData, [event.target.name]: event.target.value });
-        console.log("cambio");
     };
 
-    const verifyData = () => {
-      if(userData.name === "" || userData.phone === "" || userData.mail === "" || userData.address === ""){
-        mensajeAlerta = "Faltan completar datos";
+    const dataCorrecta = () => {
+      if(userData.name === "" || userData.phone === "" || userData.mail === "" || userData.address === "" || isNaN(userData.phone)){
+        mensajeAlerta = "Los datos ingresados no son correctos";
         return false;
       }else if( userData.mail === userData.confirmMail){
         return true;
@@ -39,7 +39,7 @@ const CartForm = () => {
     }
 
     const buyHandler = async () => {
-      if (verifyData() === true){
+      if (dataCorrecta() === true){
         const order = {
           buyer: userData,
           date: "",
@@ -50,8 +50,8 @@ const CartForm = () => {
       actualizarStock();
       const docRef = await addDoc(collection(db, "orders"), order);
       setID(docRef.id);
-
       setTerminado(true)
+
       }else{ alert(mensajeAlerta)}
         
     };
@@ -85,7 +85,8 @@ const CartForm = () => {
                       <div className="inputbox mt-3 mr-2"> <input value={userData.address} onChange={updatePerson} type="text" name="address" className="form-control" required="required"placeholder="Av Cabildo 2700"/><span>Calle y numero</span></div>
                   </div>
                   <div className="mt-4 mb-4 d-flex justify-content-between">
-                  <Button className="btn btn-success px-5" onClick={buyHandler}>Terminar Compra</Button>  
+                  <Button className="btn btn-success px-5" onClick={buyHandler}>Comprar</Button>
+                  <Button className="btn btn-warning px-5" onClick={clearCart}>Cancelar Compra</Button>  
                   </div>
               </div>
           </div>
