@@ -13,6 +13,8 @@ const CartForm = () => {
     const {listaProductos, getTotalPrecio}= useContext(CartContext);
     const [userData, setUserData] = useState({ name: "", phone: "", mail: "", confirmMail: "", address: ""});
     let mensajeAlerta = "";
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
 
     const actualizarStock = () => {
@@ -42,7 +44,7 @@ const CartForm = () => {
       if (dataCorrecta() === true){
         const order = {
           buyer: userData,
-          date: "",
+          date: date,
           items: listaProductos,
           total: getTotalPrecio()
       };
@@ -50,7 +52,7 @@ const CartForm = () => {
       actualizarStock();
       const docRef = await addDoc(collection(db, "orders"), order);
       setID(docRef.id);
-      setTerminado(true)
+      setTerminado(true);
 
       }else{ alert(mensajeAlerta)}
         
@@ -98,8 +100,8 @@ const CartForm = () => {
           <h3>Listo!</h3>
           <h4>Gracias por tu compra, tu id de pedido es:</h4>
           <h4>{idCompra}</h4>
-
-          <Link to={`/`}><Button variant="outline-primary">Volver al Inicio</Button></Link>
+          <br/>
+          <Link to={`/`}><Button variant="outline-primary" onClick={clearCart}>Volver al Inicio</Button></Link>
         </div>
       }
     </div>
